@@ -10,6 +10,9 @@ class Timesheet extends Model
 {
     use HasFactory;
 
+    /**
+     * @var int|mixed
+     */
     protected $guarded = [];
 
     public function user(): BelongsTo
