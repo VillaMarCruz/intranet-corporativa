@@ -21,7 +21,7 @@ class TimesheetResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-table-cells';
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('user_id', auth()->id());
+        return parent::getEloquentQuery()->where('user_id', auth()->id())->orderByDesc('id');
     }
     public static function form(Form $form): Form
     {
