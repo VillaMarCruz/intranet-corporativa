@@ -65,7 +65,7 @@ class ListTimesheets extends ListRecords
 
                 Notification::make()
                     ->title('Has entrado a trabajar')
-                    ->body('Has comenzado a trabajar a las:'.Carbon::now())
+                    ->body('Has comenzado a trabajar a las: '.Carbon::now(new \DateTimeZone('America/Guayaquil')))
                     ->color('success')
                     ->success()
                     ->send();
