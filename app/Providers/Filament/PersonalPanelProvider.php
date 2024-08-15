@@ -5,6 +5,7 @@ namespace App\Providers\Filament;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
+use Filament\Navigation\NavigationItem;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
@@ -28,7 +29,9 @@ class PersonalPanelProvider extends PanelProvider
             ->login()
             ->default()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Blue,
+                'warning' => Color::Amber,
+                'purple' => Color::Purple
             ])
             ->discoverResources(in: app_path('Filament/Personal/Resources'), for: 'App\\Filament\\Personal\\Resources')
             ->discoverPages(in: app_path('Filament/Personal/Pages'), for: 'App\\Filament\\Personal\\Pages')
@@ -54,6 +57,16 @@ class PersonalPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->authMiddleware([
                 Authenticate::class,
+            ])
+            ->plugins([
+                \BezhanSalleh\FilamentShield\FilamentShieldPlugin::make()
+            ])
+            ->navigationItems([
+                NavigationItem::make('Follow')
+                    ->url('https://filament.pirsch.io', shouldOpenInNewTab: true)
+                    ->icon('heroicon-o-heart')
+                    ->group('Social')
+                    ->sort(3),
             ]);
     }
 }

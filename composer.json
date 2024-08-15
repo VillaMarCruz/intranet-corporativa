@@ -7,9 +7,12 @@
     "require": {
         "php": "^8.2",
         "altwaireb/laravel-world": "^1.0",
+        "bezhansalleh/filament-panel-switch": "^1.0",
+        "bezhansalleh/filament-shield": "^3.2",
         "filament/filament": "^3.2",
         "laravel/framework": "^11.9",
-        "laravel/tinker": "^2.9"
+        "laravel/tinker": "^2.9",
+        "shanerbaner82/panel-roles": "^0.0.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
